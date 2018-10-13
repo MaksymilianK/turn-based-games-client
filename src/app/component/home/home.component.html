@@ -1,0 +1,22 @@
+<article class="section" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="7vh">
+    <ng-container *ngIf="currentUserService.current; else userNotLoggedIn">
+        <h2 class="mat-display-3">Play!</h2>
+        <div fxLayout.xs="column" fxLayout.gt-xs="row" fxLayoutAlign="center center" fxLayoutGap.xs="4vh" fxLayoutGap.gt-xs="4vw" fxFlexFill>
+            <a routerLink="game-rooms" mat-raised-button color="accent" class="button-link" fxFlex>browse games</a>
+            <span class="or" fxFlex="0 0 0">or</span>
+            <a routerLink="game-rooms/create" mat-raised-button color="accent" class="button-link" fxFlex>create own room</a>
+        </div>
+    </ng-container>
+    <ng-template #userNotLoggedIn>
+        <h2 class="mat-display-3">Join us!</h2>
+        <div fxLayout.xs="column" fxLayout.gt-xs="row" fxLayoutAlign="center center" fxLayoutGap.xs="4vh" fxLayoutGap.gt-xs="4vw" fxFlexFill>
+            <a routerLink="sign-in" mat-raised-button color="accent" class="button-link" fxFlex>sign in</a>
+            <span class="or" fxFlex="0 0 0">or</span>
+            <a routerLink="sign-up" mat-raised-button color="accent" class="button-link" fxFlex>sign up</a>
+        </div>
+    </ng-template>
+</article>
+<article class="section" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20vh">
+    <h2 class="mat-display-3">Statistics</h2>
+
+</article>

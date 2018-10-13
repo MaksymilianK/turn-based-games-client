@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
+import { OnInit } from '@angular/core';
 
 import { CurrentUserService } from '../../service/current-user.service';
+import { UserService } from '../../../user/service/user.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'core-header',
@@ -9,5 +12,9 @@ import { CurrentUserService } from '../../service/current-user.service';
 })
 export class HeaderComponent {
 
-    constructor(private currentUserService: CurrentUserService) {}
+    constructor(private currentUserService: CurrentUserService, private userService: UserService, private router: Router) {}
+
+    logout(): void {
+        this.userService.logOut().subscribe(text => {this.router.navigate([''])});
+    }
 }

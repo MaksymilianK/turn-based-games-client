@@ -1,0 +1,26 @@
+<div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="7vh" class="container">
+    <h2 class="mat-display-3">Create an account</h2>
+    <mat-card fxFlexFill class="form-container">
+        <div class="form-container">
+            <form [formGroup]="form" (submit)="registerNewUser()">
+                <div fxLayout="column" fxLayoutGap="5vh">
+                    <mat-form-field>
+                        <input matInput type="text" placeholder="nick" formControlName="nick">
+                        <mat-hint align="end">2-15 letters</mat-hint>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput type="email" placeholder="email" formControlName="email">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput type="password" placeholder="password" formControlName="password">
+                        <mat-hint align="end">5-75 characters</mat-hint>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput type="password" placeholder="repeat password" formControlName="repeatPassword">
+                    </mat-form-field>
+                    <button mat-raised-button color="primary" type="submit" class="form-button">sign up</button>
+                </div>
+            </form>
+        </div>
+    </mat-card>
+</div>

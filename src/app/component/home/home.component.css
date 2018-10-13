@@ -1,0 +1,44 @@
+.button-link {
+    font-size: 1.4rem;
+    padding: 1vh 1vw;
+    width: 100%;
+    height: 100%;
+}
+
+.or {
+    font-size: 2rem;
+}
+
+.section {
+    padding-bottom: 10vh;
+}
+
+.section:first-child {
+    margin-top: 3vh;
+}
+
+.section:not(:first-child) {
+    margin-top: 10vh;
+}
+
+.section:not(:last-child) {
+    border-bottom: 1px solid lightgray;
+}
+
+.major-header {
+    font-size: 2rem;
+    font-weight: normal;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.minor-header {
+    font-size: 1.7rem;
+    font-weight: normal;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.stats-card {
+    margin: 0 2vw;
+}

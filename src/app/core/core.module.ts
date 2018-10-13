@@ -6,6 +6,7 @@ import { SharedModule } from '../shared/shared.module';
 import { CurrentUserService } from './service/current-user.service';
 import { WebSocketService } from './service/web-socket.service';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
     imports: [
@@ -15,14 +16,14 @@ import { HttpClientModule } from '@angular/common/http';
     exports: [
         FooterComponent,
         HeaderComponent,
-        HttpClientModule
+        HttpClientModule,
+        SharedModule
     ],
     declarations: [
         FooterComponent,
         HeaderComponent
     ],
     providers: [
-        CurrentUserService,
         WebSocketService
     ]
 })

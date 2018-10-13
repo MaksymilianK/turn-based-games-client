@@ -1,0 +1,11 @@
+<mat-toolbar>
+    <h1>Turn Based Games</h1>
+    <span class="fill-remaining-space"></span>
+    <a mat-button routerLink="game-rooms">Games</a>
+    <ng-container *ngIf="currentUserService.current; else userNotLoggedIn">
+        <button mat-button (click)="logout()">logout</button>
+    </ng-container>
+    <ng-template #userNotLoggedIn>
+        <a mat-button color="accent" routerLink="sign-in">sign in</a>
+    </ng-template>
+</mat-toolbar>
