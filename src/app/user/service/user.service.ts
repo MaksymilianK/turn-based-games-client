@@ -1,5 +1,5 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpParams, HttpErrorResponse } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
 import { Page } from '../../shared/model/page';
 import { UserCreateModel } from '../model/user-create-model';
 import { TextResponse } from '../../shared/model/text-response';
@@ -8,6 +8,7 @@ import { UserRoleUpdateModel } from '../model/user-role-update-model';
 import { HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from '../../core/model/user';
+import { catchError } from 'rxjs/operators';
 
 @Injectable()
 export class UserService {

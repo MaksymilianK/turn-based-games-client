@@ -17,7 +17,6 @@ import { UserService } from './service/user.service';
         RegistrationComponent,
         LoggingInComponent
     ],
-    providers: [UserService],
-
+    providers: [UserService]
 })
 export class UserModule {}

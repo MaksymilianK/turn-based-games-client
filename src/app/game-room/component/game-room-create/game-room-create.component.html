@@ -1,0 +1,59 @@
+<div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="7vh">
+    <h2 class="mat-display-3">Create a room</h2>
+    <mat-horizontal-stepper linear fxFlexFill fxLayout="column" fxLayoutGap="5vh">
+        <mat-step label="room settings" [stepControl]="form">
+            <form [formGroup]="form" class="form">
+                <div fxLayout="column" fxLayoutGap="5vh">
+                    <mat-checkbox fxFlex formControlName="areObserversAllowed" required>observers allowed</mat-checkbox>
+                    <mat-form-field fxFlex>
+                        <mat-select formControlName="privacy" placeholder="privacy" required>
+                            <mat-option value="PUBLIC">
+                                public
+                            </mat-option>
+                            <mat-option value="GUEST_FREE">
+                                guest-free
+                            </mat-option>
+                            <mat-option value="PRIVATE">
+                                private
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field fxFlex>
+                        <mat-select formControlName="chatPolicy" placeholder="chat policy" required>
+                            <mat-option value="CHAT_ON">
+                                on
+                            </mat-option>
+                            <mat-option value="CHAT_OFF">
+                                off
+                            </mat-option>
+                            <mat-option value="PLAYERS_ONLY">
+                                players-only
+                            </mat-option>
+                            <mat-option value="OBSERVERS_ONLY">
+                                observers-only
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field fxFlex>
+                        <mat-select formControlName="game" placeholder="game" required>
+                            <mat-option value="DONT_GET_ANGRY">
+                                don't get angry
+                            </mat-option>
+                            <mat-option value="CHESS">
+                                chess
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <!-- <div fxLayout="row" fxLayoutAlign="end" class="button-container">-->
+                <form-button-container>
+                    <button mat-raised-button color="primary" class="form-button" matStepperNext fxFlex="15%">next</button>
+                </form-button-container>
+                <!--</div>-->
+            </form>
+        </mat-step>
+        <mat-step label="game settings">
+            <dont-get-angry-form (submitForm)="onGameSubmit($event)"></dont-get-angry-form>
+        </mat-step>
+    </mat-horizontal-stepper>
+</div>

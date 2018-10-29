@@ -15,7 +15,7 @@ export class WebSocketService {
 
     subscribe<T>(destination: string): Observable<T> {
         return new Observable(observer => {
-            let subscription = this.client.subscribe(destination, message => observer.next(JSON.parse(message.body)));
+            let subscription = this.client.subscribe("http://localhost:8080/" + destination, message => observer.next(JSON.parse(message.body)));
 
             return function unsubscribe() {
                 subscription.unsubscribe();

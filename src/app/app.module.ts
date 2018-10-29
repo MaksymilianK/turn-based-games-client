@@ -6,20 +6,24 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
 import { HomeComponent } from './component/home/home.component';
-import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
+import { ErrorComponent } from './component/error/error.component';
 import { StatsService } from './service/stats.service';
 import { UserModule } from './user/user.module';
+import { GameRoomModule } from './game-room/game-room.module';
+import { GameModule } from './game/game.module';
 
 @NgModule({
     imports: [
         CoreModule,
         UserModule,
-        AppRoutingModule,
+        GameRoomModule,
+        GameModule,
+        AppRoutingModule
     ],
     declarations: [
       AppComponent,
       HomeComponent,
-      PageNotFoundComponent
+      ErrorComponent
     ],
     providers: [StatsService],
     bootstrap: [AppComponent]

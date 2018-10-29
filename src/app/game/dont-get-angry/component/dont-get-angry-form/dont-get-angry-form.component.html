@@ -1,0 +1,34 @@
+<form [formGroup]="form" class="form" (ngSubmit)="onSubmit()">
+    <div fxLayout="column" fxLayoutGap="5vh">
+        <mat-form-field fxFlex>
+            <mat-select formControlName="boardSize" placeholder="board size">
+                <mat-option value="40">
+                    small
+                </mat-option>
+                <mat-option value="48">
+                    medium
+                </mat-option>
+                <mat-option value="56">
+                    big
+                </mat-option>
+                <mat-option value="64">
+                    large
+                </mat-option>
+                <mat-option value="72">
+                    huge
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field fxFlex>
+            <input matInput formControlName="maxPlayers" placeholder="max players" type="number" min="2" max="4">
+        </mat-form-field>
+        <mat-form-field fxFlex>
+            <input matInput formControlName="playerTime" placeholder="player time" type="number" step="0.5" min="1" max="30">
+            <mat-hint align="end">in minutes</mat-hint>
+        </mat-form-field>
+    </div>
+    <form-button-container>
+        <button type="button" mat-raised-button color="accent" matStepperPrevious class="form-button" fxFlex="15%">previous</button>
+        <button type="submit" mat-raised-button color="primary" class="form-button" fxFlex="15%">submit</button>
+    </form-button-container>
+</form>

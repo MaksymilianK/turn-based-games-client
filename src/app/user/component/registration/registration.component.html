@@ -2,17 +2,17 @@
     <h2 class="mat-display-3">Create an account</h2>
     <mat-card fxFlexFill class="form-container">
         <div class="form-container">
-            <form [formGroup]="form" (submit)="registerNewUser()">
+            <form [formGroup]="form" (ngSubmit)="registerNewUser()">
                 <div fxLayout="column" fxLayoutGap="5vh">
                     <mat-form-field>
-                        <input matInput type="text" placeholder="nick" formControlName="nick">
-                        <mat-hint align="end">2-15 letters</mat-hint>
+                        <input matInput type="text" placeholder="nick" formControlName="nick" maxlength="15">
+                        <mat-hint align="end">2-15 characters</mat-hint>
                     </mat-form-field>
                     <mat-form-field>
                         <input matInput type="email" placeholder="email" formControlName="email">
                     </mat-form-field>
                     <mat-form-field>
-                        <input matInput type="password" placeholder="password" formControlName="password">
+                        <input matInput type="password" placeholder="password" formControlName="password" maxlength="75">
                         <mat-hint align="end">5-75 characters</mat-hint>
                     </mat-form-field>
                     <mat-form-field>
@@ -21,6 +21,7 @@
                     <button mat-raised-button color="primary" type="submit" class="form-button">sign up</button>
                 </div>
             </form>
+            <div *ngIf="error" class="error"> {{ error }} </div>
         </div>
     </mat-card>
 </div>
