@@ -1,5 +1,5 @@
 import { GameRoomDescription } from '../../model/game-room-description';
-import { Component, Input } from '../../../../../node_modules/@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
     templateUrl: './game-room-card.component.html',

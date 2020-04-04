@@ -13,9 +13,8 @@ import { passwordMatchValidator } from '../../service/password-match-validator.d
 })
 export class RegistrationComponent {
 
-    private form: FormGroup;
-
-    private error: string = null;
+    public form: FormGroup;
+    public error: string = null;
 
     constructor(private userService: UserService, private router: Router, formBuilder: FormBuilder) {
         this.form = formBuilder.group({

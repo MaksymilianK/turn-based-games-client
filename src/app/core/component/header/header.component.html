@@ -1,11 +1,33 @@
 <mat-toolbar>
-    <h1>Turn Based Games</h1>
-    <span class="fill-remaining-space"></span>
-    <a mat-button routerLink="game-rooms">Games</a>
-    <ng-container *ngIf="currentUserService.current; else userNotLoggedIn">
-        <button mat-button (click)="logout()">logout</button>
-    </ng-container>
-    <ng-template #userNotLoggedIn>
-        <a mat-button color="accent" routerLink="sign-in">sign in</a>
-    </ng-template>
+   <h1>Turn Based Games</h1>
+   <nav fxHide.gt-sm>
+       <mat-menu #appMenu="matMenu">
+           <ul class="menu-list">
+               <li><a mat-menu-item routerLink="game-list">Games</a></li>
+               <li><a mat-menu-item routerLink="">Rooms</a></li>
+               <li><a mat-menu-item>Players</a></li>
+               <li><a *ngIf="currentUserService.current; else userNotLoggedInSmall"mat-menu-item>Sing in</a></li>
+               <ng-template #userNotLoggedInSmall>
+                   <a mat-menu-item routerLink="sign-in">Sign in</a>
+               </ng-template>
+           </ul>
+       </mat-menu>
+     
+       <button mat-icon-button [matMenuTriggerFor]="appMenu">
+           <mat-icon>more_vert</mat-icon>
+       </button>
+   </nav>
+
+   <nav fxHide fxShow.gt-sm class="menu-great">
+       <ul class="menu-list menu-list-great">
+           <li><a mat-button routerLink="game-rooms">Games</a></li>
+           <li><button *ngIf="currentUserService.current; else userNotLoggedInGreat" mat-button (click)="logout()">Logout</button></li>
+           <ng-template #userNotLoggedInGreat>
+               <a mat-stroked-button color="accent" routerLink="sign-in">Sign in</a>
+           </ng-template>
+       </ul>
+   </nav>
 </mat-toolbar>
+
+
+

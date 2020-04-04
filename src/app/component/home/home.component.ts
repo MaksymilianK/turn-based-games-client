@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
     private roomsStats: RoomsStats;
     private usersStats: UsersStats;
 
-    constructor(private statsService: StatsService, private currentUserService: CurrentUserService) {}
+    constructor(public currentUserService: CurrentUserService, private statsService: StatsService) {}
 
     ngOnInit(): void {
         this.statsService.getRoomsStats().subscribe(

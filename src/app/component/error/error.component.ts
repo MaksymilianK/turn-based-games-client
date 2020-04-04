@@ -7,7 +7,7 @@ import { ActivatedRoute } from '../../../../node_modules/@angular/router';
 })
 export class ErrorComponent implements OnInit {
 
-    private error: string;
+    public error: string;
 
     constructor(private activatedRoute: ActivatedRoute) {}
 

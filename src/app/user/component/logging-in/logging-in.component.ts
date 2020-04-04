@@ -10,7 +10,7 @@ import { UserService } from '../../service/user.service';
 })
 export class LoggingInComponent {
 
-    private form: FormGroup;
+    public form: FormGroup;
 
     constructor(private userService: UserService, private router: Router, formBuilder: FormBuilder) {
         this.form = formBuilder.group({
@@ -28,7 +28,7 @@ export class LoggingInComponent {
     }
 
     logIn(): void {
-        //if (this.form.valid) {
+        // if (this.form.valid) {
             this.userService.logIn(this.form.get('nick').value, this.form.get('password').value).subscribe(
                 response => {
                     console.log(response);
@@ -36,7 +36,7 @@ export class LoggingInComponent {
                 },
                 error => console.log(error)
             );
-        //}
+        // }
     }
 
     logInAsGuest(): void {

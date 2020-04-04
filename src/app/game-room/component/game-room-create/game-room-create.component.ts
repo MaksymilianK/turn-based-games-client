@@ -1,14 +1,11 @@
-import { GameRoomDescription } from '../../model/game-room-description';
-import { Component, Input } from '../../../../../node_modules/@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RoomPrivacy } from '../../model/room-privacy';
 import { ChatPolicy } from '../../model/chat-policy';
-import { GameSettings } from '../../../game/model/game-settings';
-import { HttpClient } from '../../../../../node_modules/@types/selenium-webdriver/http';
 import { GameRoomService } from '../../service/game-room.service';
 import { GameRoomSettings } from '../../model/game-rooms-settings';
-import { HttpErrorResponse } from '../../../../../node_modules/@angular/common/http';
+import { HttpErrorResponse } from '@angular/common/http';
 import { DontGetAngrySettings } from '../../../game/dont-get-angry/model/dont-get-angry-settings';
 
 @Component({
@@ -17,7 +14,7 @@ import { DontGetAngrySettings } from '../../../game/dont-get-angry/model/dont-ge
 })
 export class GameRoomCreateComponent {
 
-    private form: FormGroup;
+    public form: FormGroup;
 
     constructor(private gameRoomService: GameRoomService, private router: Router, formBuilder: FormBuilder) {
         this.form = formBuilder.group({

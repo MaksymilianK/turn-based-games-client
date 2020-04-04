@@ -18,7 +18,8 @@ import { GameModule } from './game/game.module';
         UserModule,
         GameRoomModule,
         GameModule,
-        AppRoutingModule
+        AppRoutingModule,
+        BrowserAnimationsModule
     ],
     declarations: [
       AppComponent,

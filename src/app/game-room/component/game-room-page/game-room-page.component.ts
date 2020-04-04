@@ -5,8 +5,8 @@ import { Page } from '../../../shared/model/page';
 import { GameRoomDescription } from '../../model/game-room-description';
 import { Game } from '../../../game/game';
 import { HttpErrorResponse } from '@angular/common/http';
-import { PageEvent } from '@angular/material';
 import { PageRequest } from '../../../shared/model/page-request';
+import {PageEvent} from '@angular/material/paginator';
 
 @Component({
     templateUrl: './game-room-page.component.html',
@@ -14,11 +14,10 @@ import { PageRequest } from '../../../shared/model/page-request';
 })
 export class GameRoomPageComponent implements OnInit {
 
-    private pageOptions: PageRequest = new PageRequest(16, 1);
+    public roomPage: Page<GameRoomDescription>;
+    public pageOptions: PageRequest = new PageRequest(16, 1);
 
     private game: Game;
-
-    private roomPage: Page<GameRoomDescription>;
 
     constructor(private roomService: GameRoomService, private activatedRoute: ActivatedRoute, private router: Router) {}
 
@@ -34,7 +33,7 @@ export class GameRoomPageComponent implements OnInit {
         });
     }
 
-    private reload(event: PageEvent): void {
+    public reload(event: PageEvent): void {
         this.pageOptions.page = event.pageIndex;
         this.pageOptions.size = event.pageSize;
         this.load();
@@ -45,7 +44,7 @@ export class GameRoomPageComponent implements OnInit {
             roomPage => this.roomPage = roomPage,
             (error: HttpErrorResponse) => {
                 console.log('-----------------' + error.error);
-                let url = this.router.parseUrl('error?error=' + error.error);
+                const url = this.router.parseUrl('error?error=' + error.error);
                 this.router.navigateByUrl(url);
             });
     }

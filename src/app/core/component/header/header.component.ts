@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent {
 
-    constructor(private currentUserService: CurrentUserService, private userService: UserService, private router: Router) {}
+    constructor(public currentUserService: CurrentUserService, private userService: UserService, private router: Router) {}
 
     logout(): void {
         this.userService.logOut().subscribe(text => {this.router.navigate([''])});

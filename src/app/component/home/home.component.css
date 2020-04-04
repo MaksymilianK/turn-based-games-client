@@ -11,6 +11,12 @@
 
 .section {
     padding-bottom: 10vh;
+    height: 90vh;
+}
+
+.join-section {
+    background-image: url("../../../assets/images/cube.jpg");
+    background-size: contain;
 }
 
 .section:first-child {

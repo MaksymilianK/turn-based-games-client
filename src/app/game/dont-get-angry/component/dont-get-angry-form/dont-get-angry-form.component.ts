@@ -11,7 +11,7 @@ import { DontGetAngrySettings } from '../../model/dont-get-angry-settings';
 })
 export class DontGetAngryFormComponent {
 
-    private form: FormGroup;
+    public form: FormGroup;
 
     @Output()
     private submitForm: EventEmitter<DontGetAngrySettings> = new EventEmitter();
